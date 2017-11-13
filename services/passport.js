@@ -17,10 +17,16 @@ passport.use(
         if (existingUser) {
           // we already have a record with the given profile.id
           console.log('User already exists with googleId:', profile.id);
+          // we tell passport that we are done and pass in the User object
+          done(null, existingUser);
         } else {
           // we don't have a user record with this id so make a new record
           console.log('Creating new User googleId:', profile.id);
-          new User({ googleId: profile.id }).save();
+          new User({ googleId: profile.id })
+            // we save the user
+            .save()
+            // we tell passport that we are done and pass in the User object
+            .then(user => done(null, user));
         }
       });
     }
