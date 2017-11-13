@@ -1,21 +1,29 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "full stack node and react app from https://www.udemy.com/node-with-react-fullstack-web-development/",
+  "description":
+    "full stack node and react app from https://www.udemy.com/node-with-react-fullstack-web-development/",
   "main": "index.js",
+  "engines": {
+    "node": "8.9.1",
+    "npm": "5.5.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rushughes/node-with-react-fullstack-web-development.git"
+    "url":
+      "git+https://github.com/rushughes/node-with-react-fullstack-web-development.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rushughes/node-with-react-fullstack-web-development/issues"
+    "url":
+      "https://github.com/rushughes/node-with-react-fullstack-web-development/issues"
   },
-  "homepage": "https://github.com/rushughes/node-with-react-fullstack-web-development#readme",
+  "homepage":
+    "https://github.com/rushughes/node-with-react-fullstack-web-development#readme",
   "dependencies": {
     "express": "^4.16.2"
   }
