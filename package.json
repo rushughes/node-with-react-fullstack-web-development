@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/rushughes/node-with-react-fullstack-web-development#readme",
   "dependencies": {
+    "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.2",
     "mongoose": "^4.13.2",
     "nodemon": "^1.12.1",
