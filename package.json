@@ -1,8 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description":
-    "full stack node and react app from https://www.udemy.com/node-with-react-fullstack-web-development/",
+  "description": "full stack node and react app from https://www.udemy.com/node-with-react-fullstack-web-development/",
   "main": "index.js",
   "engines": {
     "node": "8.9.1",
@@ -16,17 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url":
-      "git+https://github.com/rushughes/node-with-react-fullstack-web-development.git"
+    "url": "git+https://github.com/rushughes/node-with-react-fullstack-web-development.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url":
-      "https://github.com/rushughes/node-with-react-fullstack-web-development/issues"
+    "url": "https://github.com/rushughes/node-with-react-fullstack-web-development/issues"
   },
-  "homepage":
-    "https://github.com/rushughes/node-with-react-fullstack-web-development#readme",
+  "homepage": "https://github.com/rushughes/node-with-react-fullstack-web-development#readme",
   "dependencies": {
     "concurrently": "^3.5.0",
     "cookie-session": "^2.0.0-beta.3",
