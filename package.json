@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description":
     "full stack node and react app from https://www.udemy.com/node-with-react-fullstack-web-development/",
   "main": "index.js",
