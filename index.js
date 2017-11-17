@@ -31,6 +31,7 @@ app.use(function(req, res, next) {
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 if (process.env.NODE_ENV == 'production') {
   // express will serve up static production assets
