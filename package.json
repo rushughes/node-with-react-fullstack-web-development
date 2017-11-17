@@ -1,8 +1,7 @@
 {
   "name": "server",
   "version": "1.0.1",
-  "description":
-    "full stack node and react app from https://www.udemy.com/node-with-react-fullstack-web-development/",
+  "description": "full stack node and react app from https://www.udemy.com/node-with-react-fullstack-web-development/",
   "main": "index.js",
   "engines": {
     "node": "8.9.1",
@@ -13,22 +12,18 @@
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild":
-      "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
-    "url":
-      "git+https://github.com/rushughes/node-with-react-fullstack-web-development.git"
+    "url": "git+https://github.com/rushughes/node-with-react-fullstack-web-development.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url":
-      "https://github.com/rushughes/node-with-react-fullstack-web-development/issues"
+    "url": "https://github.com/rushughes/node-with-react-fullstack-web-development/issues"
   },
-  "homepage":
-    "https://github.com/rushughes/node-with-react-fullstack-web-development#readme",
+  "homepage": "https://github.com/rushughes/node-with-react-fullstack-web-development#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "concurrently": "^3.5.0",
@@ -38,6 +33,7 @@
     "nodemon": "^1.12.1",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "sendgrid": "^5.2.3",
     "stripe": "^5.3.0"
   }
 }
