@@ -6,6 +6,9 @@ import formFields from './formFields';
 import * as actions from '../../actions';
 
 const SurveyFormReview = ({ onCancel, formValues, submitSurvey }) => {
+  console.log(submitSurvey);
+  console.log(actions);
+
   const reviewFields = _.map(formFields, ({ name, label }) => {
     return (
       <div key={name}>
@@ -39,4 +42,4 @@ function mapStateToProps(state) {
   return { formValues: state.form.surveyForm.values };
 }
 
-export default connect(mapStateToProps)(SurveyFormReview);
+export default connect(mapStateToProps, actions)(SurveyFormReview);
