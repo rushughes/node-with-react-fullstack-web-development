@@ -28,21 +28,24 @@ module.exports = app => {
     //   timestamp: 1511170243,
     //   url: 'http://localhost:3000/api/surveys/5a12a24dfc3e52b312210579/yes',
     // }];
-    const events = _.map(req.body, ({ email, url }) => {
-      const pathname = new URL(url).pathname;
-      const p = new Path('/api/surveys/:surveyId/:choice');
-      const match = p.test(pathname);
-      if (match) {
-        return {
-          email,
-          surveyId: match.surveyId,
-          choice: match.choice,
-        };
-      }
-    });
-    const compactEvents = _.compact(events);
-    const uniqueEvents = _.uniqBy(compactEvents, 'email', 'surveyId');
-    console.log(uniqueEvents);
+    const p = new Path('/api/surveys/:surveyId/:choice');
+
+    const events = _.chain(req.body)
+      .map(({ email, url }) => {
+        const match = p.test(new URL(url).pathname);
+        if (match) {
+          return {
+            email,
+            surveyId: match.surveyId,
+            choice: match.choice,
+          };
+        }
+      })
+      .compact()
+      .uniqBy('email', 'surveyId')
+      .value();
+
+    console.log(events);
     res.send({});
   });
 
