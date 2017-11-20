@@ -1,3 +1,6 @@
+const _ = require('lodash');
+const Path = require('path-parser');
+const { URL } = require('url');
 const mongoose = require('mongoose');
 const requireLogin = require('../middlewares/requireLogin');
 const requireCredits = require('../middlewares/requireCredits');
@@ -12,7 +15,32 @@ module.exports = app => {
   });
 
   app.post('/api/surveys/webhooks', (req, res) => {
-    console.log(req.body);
+    // [{
+    //   ip: '192.168.0.1',
+    //   sg_event_id: 'LYQjaqVLS5arasF4uU3qfg',
+    //   sg_message_id:
+    //     'SOvlRaoTTJCWs7s85t8qVA.filter0008p3las1-28996-5A12A022-D.0',
+    //   useragent:
+    //     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+    //   event: 'click',
+    //   url_offset: { index: 1, type: 'html' },
+    //   email: 'emailaddress@gmail.com',
+    //   timestamp: 1511170243,
+    //   url: 'http://localhost:3000/api/surveys/5a12a24dfc3e52b312210579/yes',
+    // }];
+    const events = _.map(req.body, ({ email, url }) => {
+      const pathname = new URL(url).pathname;
+      const p = new Path('/api/surveys/:surveyId/:choice');
+      const match = p.test(pathname);
+      if (match) {
+        return {
+          email,
+          surveyId: match.surveyId,
+          choice: match.choice,
+        };
+      }
+    });
+    console.log(events);
     res.send({});
   });
 
